@@ -32,5 +32,7 @@ public String writing(String content){
  bw.write(content);
  return temp;
 }
+bw.flush();
+bw.close();
 }
 
