@@ -1,0 +1,12 @@
+At just now ,i was trying to revoke her message and to have a talk with me for a while .But i failed to get her voice .so i felt a little depressed.
+During the daytime ,i have learned the video given by the teacher named Arry who was served for the Tencent Cot.Below is the summary:
+
+String html=getHtmlResourceByUrl(url,encoding);
+Document doc=Jsoup.parse(html);
+
+Elements ele=doc.getElementsByTag("imag");
+String imagSrc=ele.attr("src");
+StringBuffer buff=new StringBuffer("The resorces:");
+if(!"".equals(imagSrc)&&imagSrc.startWith("http://")){
+    buff.append(imagSrc);
+}
