@@ -1,0 +1,36 @@
+Today ,i get a new skill named the XMind which is used to create the directory and the structure of ur subject and project .and i have learnt how to user the direct path and the relative resourcepath.
+if the two files were in the same folder ,you should only use it just like this:
+the struct is like this :1/index=1/js->2/jquery.js.
+so when you wanna use the 2 index ,you only do it like this:
+<script src="js/jquery.js"></script>
+what u should pay the great attention is the suffix </script>,it should never be ignored or unvalide;
+
+
+and the preffix you should do is to load the content of the js file,so you should doit like this :
+$(document).ready(function(){
+/**********ur coding content;
+});
+
+
+window.onload=function(){alert("a")}; cannot program it for many at one time;
+$(document).ready(function(){
+alert("a");}); it could run many times at the one time,and it could be abbrevidated like this:
+$(function(){alert("a")});
+
+1.if you wanna let the text be center and vertical ,you should just make it the character of the "line-height" value the same with its div height;
+2.the jquery object dosen't equal to the DOMobject ,but u can witch the easily like this :
+  var docobj=docuemnt.getElementById("#id");
+  var jqueryobj=$(docobj);
+  $(function(){
+  jqueryobj.click(function(){
+  alert(""Success!);});});
+3.use the alias to avoid conficts when using the jquery function:
+  var $J=jQuery.noConfict();
+  $J(function(){
+  $J("#id").click(function(){
+  alert("oK");});});
+4.jQuery.noConfict();
+  jQuery(function($){
+    $("#id").click(fucntion(){..............});
+  });
+  $("#id").style.display='none';//use the prototype
