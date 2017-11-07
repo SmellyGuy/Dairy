@@ -1,0 +1,62 @@
+Dependency injection:
+    Three methods to realize the dependency injection:
+    1.use the setter property method to realize it ;
+    2.use the construction function to realize it ;
+    3.use the factory method to realize it;
+    
+    now let me talk about it in details:
+    First is the property-method:
+       it injects the object and its attributes via the setter() function ;so it will call its default construct method to realize it 
+       and  to use the set method to inject the propertie to the attributes by the reflection mechanism;The property method should have a default construct method 
+       and procide the set() method to inject the attributes values;
+       
+       public class Car{
+         private String carname;
+         private String brand;
+         
+         public void setBrand(String brand){
+         this.brand=brand;
+         }
+         public String getBrand(){
+         return this.brand;
+         }
+       }
+    xml:
+    <bean id="car" class="com.mrlee.bean.Car">
+       <property name="brand">
+       <value>Benci</>
+       </property>
+       <propety name="carname">
+        <value>GLV/5</value>
+       </property>
+    </bean>
+    
+    Second id the construct method to realize it :
+      
+         it makes suer that the main propertie will be instantiated with the initiation values;
+         and it can be used after that directly;so it must contain the default construct method with the args;
+         and it will various from the introduce by the type to index and by the reflection mechanism;
+         
+         
+         public class Car{
+           public Car(String brand ,String carname){
+           this.brand=carname;
+           this.brand=brand;
+           }
+           public String getBrandName(){
+           return brand;
+           }
+           public void setBrandName(){
+           this.brand=brand;
+           }
+         }
+         
+         xml:
+         <bean id="Car" class="com.mrlee.Car">
+          <construcor-arg type="String">
+            <value>benci</value>
+          </constructor-arg>
+         </bean>
+         
+         
+                                                     
