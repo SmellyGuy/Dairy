@@ -1,0 +1,101 @@
+1.If u wanna add an extra class for the element style ,you can use the addClass() method to realize it ;
+   CSS-file:
+   .addition{font-style:italic;font-size:14px}
+   
+   $(".destination div span").addClass(addition);
+   
+   also you can put this addtional css style in the html content like this :
+   
+   <style>.addition{...............}</style>
+   
+2.the simple setting the css style is the attr() method :
+  first you should get the css position you wanan set,and then to set the style; 
+  
+  $(".destination div span").attr("class","addition");
+  
+3.If u wanna remove the class style :
+
+ $(".destination div span").removeClass(addition);
+ 
+4.$destination.toggle(function(){...........},function(){..............});
+  $("destination").toggleClass(""addition);//usr this to toggle check the class addition state and to add and remove it ;
+  
+5.$("destination").hasClass("addition");//or you can do it like this:$("destination").is(".addition") 
+to judge it whether it has been existed;
+6.var $htm-txt=$("destination").html();get the html prototype-code of the element you pointed;
+    var txt=$("htm-txt")[0];
+    alert(txt);
+7.var txt-value=$("htm-txt").val();//get the value of the htm-txt object;
+  if(txt-value=="lee"){$("htm-txt").val(" Lee shung" );}
+8.$("destination").focus(function(){.......});// active the function when u get the mouse focus ;
+  $("destination").blur(function(){........});//active the function when u lose the mouse focus;
+9.$("#select").val("option-1","option-2");//it means that i has selected the options named "option-1" and "option-2";
+   the same function realized below:
+   $("#select option:lt(2)").attr("selected",true);
+
+10.for(var i=0;i<$("#li_exam").children().length;i++){
+  alert($("#li_exam").children()[i].innerHTML);}//children() only confined to the children not the other spring ;
+11.$(".destination").next/prev/siblings();  $(".div >a") means the childred node named a in div class;
+12.$(document).bind(function(e){
+   $(e.target).closest("li").css(.............);});
+13.$("p").height("100em");if the val of the height is just a num you can just do it without""like this $("p").height(100);
+14.$("destination").offset();//get the offset-num of this element;
+15.e.pageX<left> and e.pageY<top> is the main position attributes of the elements;
+  var x=20;
+  var y=30;
+  $("#destination").css({
+    "top":(this.pageY+y)+"px",
+    "left":(this.pageX+x)+"px"
+  }).show("fast").mouseover(function(){});
+  16.bind(type,function(){});
+    $(".destination div span").bind("click",function(){..............});
+  17.$(function(){
+      $(".destination div span").bind("click",function(){
+        if($(".destination div span").is(":visible")){
+          $(this).next().show();}
+          else
+          $(this).next().hide();
+      });
+  });//this==".destination div span"  and it 's a local variable;
+  
+    so as to code simple we'd better code abbreatial like this:
+    $(function(){$(".destination div span").click(...........)});//without visible bind;
+  18.toggle(function(a){.....},function(b){..........});//execute between the two function ;
+     hover(function(a){......},function(b){..........});//when the element is mouse-hover ,it will execute the a function .
+     else execute the b function; 
+     $(".destination div span").hover(fucntion(){
+     $(this).show(""slow)},function(){$(this).hide("fast")});
+   19.when the situation like this:
+    body[click]>div[click]>span[click]
+    if u click the span ,it will also active the div and its parents body;
+    so we should do it like this:
+    $("body").bind("click",function(target_event){.............});
+    20.every element in the html has its default function ,but we sometimes should ban it :
+       $(function(){
+             $("#form").click(function(e_target){
+               if($("#username").val()==""||$("#username").val()==null){
+               e_target.preventDefault();//so we used to operate this as "return false;"
+               }
+             });       
+       })
+       21.e_target.pageX/e_target.pageY;
+        e_target.which;//get the key of the mouse click event;
+        $(".destination").mousedown(function(e_target){alert(e_target.which);});
+        $(",destination").keyup(function(e_target){alert(e_target.which);});//get the key from keyboard;
+      22.$().click(function(){
+         $(""destination).unbind("click",function_name);
+      });
+        
+      23.one(type,[data],fn);//it's designed for the button event;the event will be executed only if the button is the first clicked;
+      $("#sub_btn").one("click",function(){.......});
+      24.If you wanna active which event :
+      $(".destination).trigger("function_name");
+      25.to bind at least one event;
+      $().bind("click mousedown mouse over", function(){});
+      26.use the suffix to manage the event:
+      $(function(){
+        $().bind("mouseover.plugin",function(){}).bind("click.plugin",function(){});
+        $().unbind(".plugin");
+      });
+      P132;
+       
