@@ -1,0 +1,16 @@
+1.animate(params,speed,callback);
+  params :{property:value,.............}
+  speed:speed args[alternative];
+  callback: function()[alternative],this function will be execute after the animation has been loaded;
+  $().click(function(){
+    $(".destination").animate({left:"500px",height:"300px"},3000,function(e_target){.............}).
+    animate({right:"200px",width:"+=200px"},3000,function(){...............});
+  });
+2.$(".destination").hover(function(){
+    $(this).stop().animate({left:"500px",3000;function(){$("div").fade();}}).animate(...............);
+   },function(){......................}); //when u use the stop() function ,it will switch to the next animate which is the next link and the closest animate function;
+stop([clearQueue],[gotoEnd]);//stop(true,false)
+3. if($(".dextination").is(:animated)){......................}
+4.toggle(speed ,[callback]);slideToggle(speed,[easing],[callback]);fadeTo(speed,opacity,[callback]);fadeToggle(speed,[easing],[callback]);
+5.
+  
