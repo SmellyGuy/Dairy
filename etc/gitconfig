@@ -1,0 +1,13 @@
+[http]
+	sslCAInfo = C:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
+	sslBackend = openssl
+[diff "astextplain"]
+	textconv = astextplain
+[core]
+	autocrlf = true
+	fscache = true
+	symlinks = true
+[credential]
+	helper = manager
+[add "interactive"]
+	useBuiltin = true
